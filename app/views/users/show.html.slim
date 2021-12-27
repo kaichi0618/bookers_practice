@@ -2,5 +2,5 @@ h1 User info
 = @user.name
 = @user.introduction
 - if current_user == @user
- = link_to edit_user_path(@user)
+ = link_to edit_user_path(current_user)
   i.fas.fa-cog.fa-2x

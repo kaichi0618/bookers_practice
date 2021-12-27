@@ -11,6 +11,14 @@ html
     header
       - if user_signed_in?
           li
+            = link_to "home", root_path
+          li
+            = link_to "books", books_path
+          li
+            = link_to "user", users_path
+          li
+            = link_to "mypage", user_path(current_user.id)
+          li
             = link_to "logout", destroy_user_session_path, method: :delete
       - else
           li
