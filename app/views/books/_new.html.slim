@@ -1,0 +1,10 @@
+= form_with model:book, local:true do |f|
+    .form-group
+        = f.label :"タイトル"
+        = f.text_field :title
+    .form-group
+        = f.label :"本文"
+        = f.text_area :body
+    .form-group
+        = f.submit :"投稿"
+    
