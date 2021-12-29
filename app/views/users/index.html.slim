@@ -1,12 +1,18 @@
-table.table.table-hover.table-inverse
- thead
-  tr
-   th image
-   th name
-   th
- tbody
- - @users.each do |user|
-  tr
-   td= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg")
-   td= user.name
-   td= link_to "show", user_path(user.id)
+.container
+ .row
+  .col-md-3
+   = render "users/show", user: @user
+   = render "books/new", book: @book
+  .col-md-8.offset-md-1
+    table.table.table-hover.table-inverse
+     thead
+      tr
+       th image
+       th name
+       th
+     tbody
+     - @users.each do |user|
+      tr
+       td= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg")
+       td= user.name
+       td= link_to "show", user_path(user.id)

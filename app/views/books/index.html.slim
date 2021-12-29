@@ -1,5 +1,10 @@
-=render 'books/new', book: @book
-- @books.each do |book|
-    = book.title
-    = link_to "編集", edit_book_path(book.id)
+.container
+ .row
+  .col-md-3
+   = render "users/show", user: @user
+   = render 'books/new', book: @book
+  .col-md-8.offset-md-1
+    - @books.each do |book|
+      = book.title
+      = link_to "編集", edit_book_path(book.id)
    

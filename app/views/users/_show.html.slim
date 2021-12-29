@@ -1,0 +1,15 @@
+h2 User info
+= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpeg")
+table.table
+ tbody
+  tr
+   th name
+   th= user.name
+  tr
+  th introduction
+  th= user.introduction
+  
+.row
+ - if current_user == user
+  = link_to edit_user_path(current_user), class: "btn btn-outline-dark btn-block"
+   i.fas.fa-user-cog
