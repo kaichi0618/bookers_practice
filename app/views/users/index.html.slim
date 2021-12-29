@@ -1,4 +1,12 @@
-- @users.each do |user|
-    = user.name
-    = attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg")
-    = link_to "show", user_path(user.id)
+table.table.table-hover.table-inverse
+ thead
+  tr
+   th image
+   th name
+   th
+ tbody
+ - @users.each do |user|
+  tr
+   td= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg")
+   td= user.name
+   td= link_to "show", user_path(user.id)

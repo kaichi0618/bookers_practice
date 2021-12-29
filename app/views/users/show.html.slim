@@ -1,7 +1,15 @@
-h1 User info
+h2 User info
 = attachment_image_tag(@user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpeg")
-= @user.name
-= @user.introduction
-- if current_user == @user
- = link_to edit_user_path(current_user)
-  i.fas.fa-cog.fa-2x
+table.table
+ tbody
+  tr
+   th name
+   th= @user.name
+  tr
+  th introduction
+  th= @user.introduction
+  
+.row
+ - if current_user == @user
+  = link_to edit_user_path(current_user)
+   i.fas.fa-cog.fa-2x
