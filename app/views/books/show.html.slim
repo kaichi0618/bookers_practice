@@ -1,4 +1,12 @@
-= @book.title
-= @book.body
-- if @book.user_id == current_user.id
- = link_to "削除", book_path(@book.id), method: :delete, data: { confirm: '本当に消しますか？' }
+.container
+ .row
+  .col-md-3
+   = render "users/show", user: current_user
+   = render "books/new", book: @newbook
+  .col-md-8.offset-1
+   h2 Book detail
+   table.table.table-hover.table-inverse
+    = @book.title
+    = @book.body
+    - if @book.user_id == current_user.id
+     = link_to "削除", book_path(@book.id), method: :delete, data: { confirm: '本当に消しますか？' }
