@@ -1,1 +1,20 @@
-h1 トップページ
+.container
+ .row
+  .col-md-11.mx-auto
+    h1
+     | welcome to 
+     i.fas.fa-book
+     strong Bookers
+     | !!
+     
+    p
+     | In 
+     i.fas.fa-book
+     strong Bookers,
+    p
+     | you can share and exchange your opinions, inpressions, and emotions
+     
+    p about various books!
+  .col-md-10
+   =link_to "Log in", new_user_session_path, class: "btn btn-primary btn-block"
+   =link_to "Sign in", new_user_registration_path, class: "btn btn-success btn-block"
