@@ -6,7 +6,14 @@
   .col-md-8.offset-1
    h2 Book detail
    table.table.table-hover.table-inverse
-    = @book.title
-    = @book.body
-    - if @book.user_id == current_user.id
-     = link_to "削除", book_path(@book.id), method: :delete, data: { confirm: '本当に消しますか？' }
+    tr
+     td
+       = attachment_image_tag(@book.user, :profile_image, :fill, 50 , 50, fallback: "no-image-icon.jpg")
+       br
+       = link_to user_path(@book.user)
+          = @book.user.name
+     td= @book.title
+     td= @book.body
+     - if @book.user_id == current_user.id
+      td= link_to "edit", edit_book_path(@book.id), class: "btn btn-success"
+      td= link_to "Destroy", book_path(@book.id), method: :delete, class: "btn btn-danger", data: { confirm: '本当に消しますか？' }
