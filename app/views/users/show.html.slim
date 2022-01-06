@@ -1,1 +1,8 @@
-= render "users/show", user: @user
+.container
+ .row
+  .col-md-3
+   = render "users/show", user: @user
+   = render "books/new", book: @newbook
+  .col-md-8.offset-md-1
+   = render "books/index", books: @books
+   
